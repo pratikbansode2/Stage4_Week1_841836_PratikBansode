@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dep1" class="com.cognizant.employee.Department"
+		scope="prototype">
+		<property name="id" value="1" />
+		<property name="name" value="Developement" />
+
+	</bean>
+	<bean id="dep2" class="com.cognizant.employee.Department"
+		scope="prototype">
+		<property name="id" value="2" />
+		<property name="name" value="Testing" />
+
+	</bean>
+
+	<bean id="skl1" class="com.cognizant.employee.Skill"
+		scope="prototype">
+		<property name="id" value="1" />
+		<property name="name" value="Java" />
+
+	</bean>
+	<bean id="skl2" class="com.cognizant.employee.Skill"
+		scope="prototype">
+		<property name="id" value="2" />
+		<property name="name" value="Selenium" />
+
+	</bean>
+
+
+	<bean id="emp1" class="com.cognizant.employee.Employee"
+		scope="prototype">
+		<property name="department" ref="dep1" />
+		<property name="name" value="Pratik" />
+		<property name="skill" ref="skl1" />
+		<property name="salary" value="20000" />
+
+	</bean>
+	<bean id="emp2" class="com.cognizant.employee.Employee"
+		scope="prototype">
+		<property name="department" ref="dep2" />
+		<property name="name" value="Omkar" />
+		<property name="skill" ref="skl2" />
+		<property name="salary" value="30000" />
+
+	</bean>
+	<bean id="emp3" class="com.cognizant.employee.Employee"
+		scope="prototype">
+		<property name="department" ref="dep1" />
+		<property name="name" value="Abhijeet" />
+		<property name="skill" ref="skl1" />
+		<property name="salary" value="15000" />
+
+	</bean>
+	<bean id="emp4" class="com.cognizant.employee.Employee"
+		scope="prototype">
+		<property name="department" ref="dep2" />
+		<property name="name" value="Hemant" />
+		<property name="skill" ref="skl2" />
+		<property name="salary" value="20000" />
+
+	</bean>
+
+	<bean id="employeeList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="emp1"></ref>
+				<ref bean="emp2"></ref>
+				<ref bean="emp3"></ref>
+				<ref bean="emp4"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="departmentList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="dep1"></ref>
+				<ref bean="dep2"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>

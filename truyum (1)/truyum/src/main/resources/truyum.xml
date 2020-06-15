@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="item1" class="com.cognizant.truyum.model.MenuItem"
+		scope="prototype">
+		<property name="id" value="1" />
+		<property name="name" value="Butter Paneer" />
+		<property name="price" value="180" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch" value="20/03/2019" />
+		<property name="category" value="Main Course" />
+		<property name="freeDelivery" value="true" />
+
+	</bean>
+	<bean id="item2" class="com.cognizant.truyum.model.MenuItem"
+		scope="prototype">
+		<property name="id" value="2" />
+		<property name="name" value="Butter Chicken" />
+		<property name="price" value="450" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch" value="20/03/2019" />
+		<property name="category" value="Main Course" />
+		<property name="freeDelivery" value="true" />
+
+	</bean>
+	<bean id="item3" class="com.cognizant.truyum.model.MenuItem"
+		scope="prototype">
+		<property name="id" value="3" />
+		<property name="name" value="Masala Papad" />
+		<property name="price" value="50" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch" value="20/03/2019" />
+		<property name="category" value="Starter" />
+		<property name="freeDelivery" value="false" />
+
+	</bean>
+	<bean id="item4" class="com.cognizant.truyum.model.MenuItem"
+		scope="prototype">
+		<property name="id" value="1" />
+		<property name="name" value="Ice Cream" />
+		<property name="price" value="90" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch" value="20/03/2019" />
+		<property name="category" value="Dessert" />
+		<property name="freeDelivery" value="false" />
+
+	</bean>
+
+	<bean id="menuItemList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="item1"></ref>
+				<ref bean="item2"></ref>
+				<ref bean="item3"></ref>
+				<ref bean="item4"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="movie1" class="com.cognizant.moviecruiser.model.Movie"
+		scope="prototype">
+		<property name="id" value="1" />
+		<property name="title" value="Kabir Singh" />
+		<property name="boxOffice" value="180 cr" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch" value="20/03/2019" />
+		<property name="genre" value="Romance" />
+		<property name="hasTeaser" value="true" />
+
+	</bean>
+	<bean id="movie2" class="com.cognizant.moviecruiser.model.Movie"
+		scope="prototype">
+		<property name="id" value="2" />
+		<property name="title" value="World Famous Lover" />
+		<property name="boxOffice" value="180 cr" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch" value="20/03/2020" />
+		<property name="genre" value="Romance" />
+		<property name="hasTeaser" value="true" />
+
+	</bean>
+	<bean id="movie3" class="com.cognizant.moviecruiser.model.Movie"
+		scope="prototype">
+		<property name="id" value="3" />
+		<property name="title" value="Avengers:End Game" />
+		<property name="boxOffice" value="400 cr" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch" value="20/03/2019" />
+		<property name="genre" value="Sci-Fiction" />
+		<property name="hasTeaser" value="true" />
+
+	</bean>
+	<bean id="movie4" class="com.cognizant.moviecruiser.model.Movie"
+		scope="prototype">
+		<property name="id" value="4" />
+		<property name="title" value="Drishyam" />
+		<property name="boxOffice" value="180 cr" />
+		<property name="active" value="false" />
+		<property name="dateOfLaunch" value="20/03/2018" />
+		<property name="genre" value="Thriller" />
+		<property name="hasTeaser" value="true" />
+
+	</bean>
+
+	<bean id="movieList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="movie1"></ref>
+				<ref bean="movie2"></ref>
+				<ref bean="movie3"></ref>
+				<ref bean="movie4"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
